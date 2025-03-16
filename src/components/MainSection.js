@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MainSection.css';
 import mainImage from '../images/Main.jpg';
 
@@ -20,9 +21,9 @@ function MainSection() {
           It simplifies booking, scheduling, and payments, making learning more
           accessible and tutoring more rewarding.
         </p>
-        <div className="buttons">
-          <button className="login-btn">Login</button>
-          <button className="register-btn">Register</button>
+        <div className="buttons-css">
+          <Link to="/login" className="login-btn">Login</Link>
+          <Link to="/register" className="register-btn">Register</Link>
         </div>
       </div>
     </div>
