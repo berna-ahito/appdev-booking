@@ -5,28 +5,30 @@ import mainImage from '../images/Main.jpg';
 
 function MainSection() {
   return (
-    <div className="main-section">
+    <section className="main-section">
       <div className="image-container">
-        <img src={mainImage} alt="wild teach" />
+        <img src={mainImage} alt="Empowering Education" />
       </div>
 
       <div className="content">
-        <h1>EMPOWER STUDENTS</h1>
-        <h3>Learn</h3>
-        <h3>Teach</h3>
-        <h3>Succeed</h3>
-        <h3>Together</h3>
-        <p>
-          Connects students who need academic support with peer tutors on campus.
-          It simplifies booking, scheduling, and payments, making learning more
+        <h1 className="main-title">Empower Students</h1>
+        <div className="tagline">
+          <h3>Learn</h3>
+          <h3>Teach</h3>
+          <h3>Succeed</h3>
+          <h3>Together</h3>
+        </div>
+        <p className="description">
+          Connect students who need academic support with peer tutors on campus.
+          Simplify booking, scheduling, and payments, making learning more
           accessible and tutoring more rewarding.
         </p>
-        <div className="buttons-css">
-          <Link to="/login" className="login-btn">Login</Link>
-          <Link to="/register" className="register-btn">Register</Link>
+        <div className="buttons">
+          <Link to="/login" className="btn login-btn">Login</Link>
+          <Link to="/register" className="btn register-btn">Register</Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
