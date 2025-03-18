@@ -4,6 +4,9 @@ import NavSection from "./components/NavSection";
 import MainSection from "./components/MainSection";
 import Login from "./components/Login";
 import Register from "./components/Register";
+// import AboutUs from "./components/AboutUs";
+import AboutSection from "./components/AboutSection";
+
 
 function App() {
   return (
@@ -14,12 +17,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/about" element={<div>About Wild Teach</div>} />
-        <Route path="/how-it-works" element={<div>How It Works</div>} />
-        <Route path="/about-us" element={<div>About Us</div>} />
-        <Route path="/contact" element={<div>Contact Us</div>} /> */}
+        <Route path="/how-it-works" element={<div>How It Works</div>} /> */}
+        {/* <Route path="/about-us" element={<AboutUs />} /> */}
+        <Route path="/about-us" element={<AboutSection />} />
+
+        {/* <Route path="/about-us" element={<div>About Us</div>} /> */}
+        {/* <Route path="/contact" element={<div>Contact Us</div>} /> */}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
