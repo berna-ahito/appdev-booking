@@ -5,8 +5,6 @@
   margin: auto;
   padding: 40px;
   text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #ffcc00); /* Gradient yellow background */
-
 }
 
 
@@ -26,6 +24,7 @@
 
 .developer-cards {
   margin-top: 50px;
+  
 }
 
 .developer-cards h2 {
@@ -41,6 +40,7 @@
   flex-wrap: nowrap;
   max-width: 1200px;
   margin: auto;
+  
 }
 
 .card {
@@ -53,6 +53,7 @@
   transition: transform 0.3s ease-in-out;
   flex: 1 1 25%; /* Ensures 4 cards fit evenly */
   max-width: 250px; /* Limits card width */
+  border: 2px solid #89343B;
 }
 
 

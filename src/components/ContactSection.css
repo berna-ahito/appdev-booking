@@ -1,9 +1,9 @@
-/* ContactSection.css */
 .contact-section {
     background-color: #f4f4f4;
     padding: 50px 20px;
     display: flex;
     justify-content: center;
+    background: linear-gradient(to bottom, #ffffff, #ffcc00);
   }
   
   .contact-container {
@@ -13,6 +13,8 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #89343B;
+    
   }
   
   .contact-title {
@@ -38,7 +40,7 @@
   
   .contact-form input,
   .contact-form textarea {
-    width: 100%;
+    width: 97%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -52,17 +54,20 @@
   
   .contact-button {
     width: 100%;
-    background-color: #007bff;
-    color: white;
+    background-color: #89343B;
+    color: #F8C400;
     border: none;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    border: 2px solid #F8C400;
   }
   
   .contact-button:hover {
-    background-color: #0056b3;
+    background-color: #F8C400;
+    color: #89343B;  
+    border: 2px solid #89343B;
   }
   
   .contact-info {

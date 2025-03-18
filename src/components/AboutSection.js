@@ -1,9 +1,9 @@
 import React from 'react';
 import './AboutSection.css';
-import dev1 from '../images/developer1.jpg';
-import dev2 from '../images/developer2.jpg';
-import dev3 from '../images/developer3.jpg';
-import dev4 from '../images/developer4.jpg';
+import dev1 from '../images/bernaPic.jpg';
+import dev2 from '../images/alivioPic.jpg';
+import dev3 from '../images/juviePic.jpg';
+import dev4 from '../images/kylePic.jpg';
 
 
 function AboutSection() {

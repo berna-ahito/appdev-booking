@@ -68,8 +68,13 @@
     transition: 0.3s;
 }
 
-.new-user {
+.login-container a {
+    text-decoration: none;
+    color: #F8C400;
+    font-size: 16px;
     margin-top: 10px;
-    font-size: 14px;
-    color: #89343B;
+    text-decoration-line: underline;
 }
+
+
+
