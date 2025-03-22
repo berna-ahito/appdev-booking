@@ -35,7 +35,7 @@
 
 .cards {
   display: flex;
-  justify-content: space-between; /* Ensures even spacing */
+  justify-content: space-between; 
   gap: 20px;
   flex-wrap: nowrap;
   max-width: 1200px;
@@ -51,11 +51,13 @@
   text-align: center;
   width: 250px;
   transition: transform 0.3s ease-in-out;
-  flex: 1 1 25%; /* Ensures 4 cards fit evenly */
-  max-width: 250px; /* Limits card width */
+  flex: 1 1 25%; 
+  max-width: 250px; 
   border: 2px solid #89343B;
 }
-
+.cards p{
+  margin-top: auto;
+}
 
 .card:hover {
   transform: translateY(-5px);

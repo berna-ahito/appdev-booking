@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import WhatIsSection from "./components/WhatIsSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
+ import RegisterNext from "./components/RegisterNext";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<MainSection />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/registerNext" element={<RegisterNext />} /> 
         <Route path ="/what-is" element={<WhatIsSection />} />
         <Route path="/about-us" element={<AboutSection />} />
         <Route path="/contact" element={<ContactSection />} />

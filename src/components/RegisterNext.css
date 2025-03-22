@@ -1,0 +1,121 @@
+.bg-image1 {
+    background-image: url("../images/bgLogin.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    filter: blur(10px); 
+}
+.registerNext-container h1{
+    color: #89343B;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 50px;
+    padding-bottom: 30px;
+}
+
+.registerNext-container {
+    position: relative;
+    background: rgba(239, 248, 157, 0.2); 
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid #F8C400; 
+    width: 1000px; 
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   
+}
+.registerNext-container label {
+    display: block;
+    font-weight: bold;
+    color: #89343B;
+    margin-bottom: 5px;
+}
+
+
+.form-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.form-column {
+    width: 48%;
+}
+
+.input-group1 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+.input-group1 input{
+    background: rgba(100, 94, 94, 0.2);
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #89343B;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #F8C400;
+}
+select{
+    background: rgba(100, 94, 94, 0.2);
+    color: #F8C400; 
+    border: 1px solid #89343B; 
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 10;
+    margin-top: 10px;
+   
+}
+
+.input-group1 input::placeholder {
+    color: #F8C400;
+}
+.input-group1 textarea {
+    background: rgba(100, 94, 94, 0.2);
+    width: 90%;
+    height: 115px;
+    border: 2px solid #89343B;
+    border-radius: 16px;
+    padding: 10px;
+    resize: none;
+    color: #F8C400;
+}
+textarea::placeholder {
+    color: #F8C400;
+}
+
+.submit-btn {
+    width: 30%;
+    padding: 10px;
+    background: #89343B;
+    color: #F8C400;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background: #F8C400;
+    color: #89343B;
+}
+
+.registerNext-container p {
+    margin-top: 10px;
+    color: white;
+}
+
+.registerNext-container a {
+    color: #89343B;
+    text-decoration: underline;
+}
