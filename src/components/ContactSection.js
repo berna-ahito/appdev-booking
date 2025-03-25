@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ContactSection.css"; // Import the CSS file
+import "./ContactSection.css"; 
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -8,14 +8,12 @@ function ContactSection() {
     message: "",
   });
 
-  const [status, setStatus] = useState(""); // For success/error messages
+  const [status, setStatus] = useState(""); 
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
@@ -30,7 +28,7 @@ function ContactSection() {
       const data = await response.json();
       if (response.ok) {
         setStatus("Message sent successfully! ✅");
-        setFormData({ name: "", email: "", message: "" }); // Reset form
+        setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus(`Error: ${data.error}`);
       }

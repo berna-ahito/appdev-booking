@@ -1,10 +1,8 @@
-/* AboutSection.css */
-
 .about-container {
-  /* max-width: 1000px; */
   margin: auto;
   padding: 40px;
   text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #ffcc00);
 }
 
 
@@ -60,7 +58,7 @@
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-15px);
 }
 
 .card img {
@@ -84,12 +82,12 @@
 
 @media (max-width: 1024px) {
   .card {
-    flex: 1 1 calc(50% - 20px); /* 2 cards per row on smaller screens */
+    flex: 1 1 calc(50% - 20px); 
   }
 }
 
 @media (max-width: 600px) {
   .card {
-    flex: 1 1 100%; /* 1 card per row on mobile */
+    flex: 1 1 100%; 
   }
 }

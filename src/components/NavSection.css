@@ -1,14 +1,14 @@
 .nav-section {
     background-color: #ffffff;
     padding: 15px 20px;
-    border-bottom: 1px solid #89343B;
+    border-bottom: 3px solid #89343B;
     display: flex;
     
     
 }
 h1{
     color: #89343B;
-    font-size: 40px;
+    font-size: 45px;
     margin: 10px 0;
     margin-left: 45px;
   

@@ -1,16 +1,20 @@
-import React from 'react'
-import './WhatIsSection.css'
+import React from 'react';
+import './WhatIsSection.css';
+
 function WhatIsSection() {
   return (
-    <div className='what-is-container'>
-      <h1>What is Wild Teach?</h1>
-      <p>
-      Wild Teach would enable students like Student A to book tutoring sessions with Student B, who specializes in that subject.  This way, 
-      Student A can catch up on lessons, while Student B can earn and strengthen their knowledge through teaching.  Wild Teach benefits 
-      both parties by keeping tutoring on-campus, saving time and effort and making it convenient for everyone.
-      </p>
+    <div className="what-is-container">
+      <div className="content-box">
+        <h1>What is Wild Teach?</h1>
+        <p className="justified-text">
+          <b><i>Experience the Power of Peer Learning with Wild Teach!</i></b> Our platform transforms the way students learn by connecting them with knowledgeable peers. Get personalized academic support to excel in your studies, while peer tutors earn money and reinforce their own understanding through teaching. 
+          Best of all, everything happens right on campus, making learning more convenient, efficient, and rewarding for everyone!
+        </p>
+        <p className="call-to-action-text"><b>Join the Movement Today! Start Your Journey!</b></p>
+        <button className="call-to-action">Be Part of It</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default WhatIsSection
+export default WhatIsSection;
