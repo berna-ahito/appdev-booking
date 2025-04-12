@@ -53,7 +53,7 @@
   }
   
   .contact-button {
-    width: 100%;
+    width: 50%;
     background-color: #89343B;
     color: #F8C400;
     border: none;
@@ -62,6 +62,8 @@
     border-radius: 5px;
     cursor: pointer;
     border: 2px solid #F8C400;
+    position: center;
+    margin-left: 200px;
   }
   
   .contact-button:hover {

@@ -1,6 +1,6 @@
 
 .bg-image {
-    background-image: url("../images/bgLogin.jpg");
+    background-image: url("../../images/bgLogin.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,6 +107,8 @@ select option{
     border-radius: 12px;
     cursor: pointer;
     font-size: 18px;
+    position: center;
+    margin-left: 5px;
 }
 
 .register-container button:hover {

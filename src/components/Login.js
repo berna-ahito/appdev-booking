@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "./CSS/Login.css";
 
 function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
@@ -27,11 +27,10 @@ function Login({ setIsLoggedIn }) {
         const data = await response.json();
         console.log("Login successful", data);
 
-        // Save login status
         setIsLoggedIn(true);
         localStorage.setItem("isLoggedIn", "true");
 
-        navigate("/home"); // fixed: should be "/home"
+        navigate("/home"); 
       } else {
         setError("Invalid username or password");
       }

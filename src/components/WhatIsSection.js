@@ -1,5 +1,5 @@
 import React from 'react';
-import './WhatIsSection.css';
+import './CSS/WhatIsSection.css';
 
 function WhatIsSection() {
   return (

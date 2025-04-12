@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './MainSection.css';
+import './CSS/MainSection.css';
 import mainImage from '../images/Main.jpg';
 
 function MainSection() {

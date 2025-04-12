@@ -1,6 +1,6 @@
 
 .bg-image {
-    background-image: url("../images/bgLogin.jpg"); 
+    background-image: url('../../images/bgLogin.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,6 +60,9 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    position: center;
+    margin-left: 5px;
+    
 }
 
 .login-container button:hover {
