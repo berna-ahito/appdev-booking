@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-function Login() {
+function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,7 +27,11 @@ function Login() {
         const data = await response.json();
         console.log("Login successful", data);
 
-        navigate("home"); 
+        // Save login status
+        setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn", "true");
+
+        navigate("/home"); // fixed: should be "/home"
       } else {
         setError("Invalid username or password");
       }
@@ -36,6 +40,7 @@ function Login() {
       setError("Something went wrong. Please try again.");
     }
   };
+
 
   return (
     <>

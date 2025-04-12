@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
+import Sidebar from "./Sidebar";
+import "./HomePage.css"; // your existing styles
 
 function HomePage() {
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the main content of the home page.</p>
+      <Sidebar />
+      {/* Your dashboard content here */}
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
