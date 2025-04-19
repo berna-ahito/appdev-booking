@@ -18,11 +18,11 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
       <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
-        <Link to="/home" className="sidebar-link">Home</Link>
-        <Link to="/user-manage" className="sidebar-link">User Manage</Link>
-        <Link to="/session-manage" className="sidebar-link">Session Manage</Link>
-        <Link to="/announcements" className="sidebar-link">Announcements</Link>
-        <Link to="/settings" className="sidebar-link">Settings</Link>
+        <Link to="/admin/home" className="sidebar-link">Home</Link>
+        <Link to="/admin/user-manage" className="sidebar-link">User Manage</Link>
+        <Link to="/admin/session-manage" className="sidebar-link">Session Manage</Link>
+        <Link to="/admin/announcements" className="sidebar-link">Announcements</Link>
+        <Link to="/admin/settings" className="sidebar-link">Settings</Link>
         <button onClick={handleLogout} className="logout-btn">Logout</button>
       </div>
 

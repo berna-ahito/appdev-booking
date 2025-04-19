@@ -1,8 +1,11 @@
 .sidebar-container {
-    position: absolute;
-  }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    }
   
   .toggle-btn {
+    margin-top: -160px;
     background-color: #F8C400;
     width: 200px;
     height: 100px;
