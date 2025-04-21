@@ -10,6 +10,9 @@ import ContactSection from "./components/ContactSection";
 import HomePage from "./AdminComponents/HomePage";
 import Sidebar from "./AdminComponents/Sidebar";
 import Announcements from "./AdminComponents/Announcements";
+import UserManagement from "./AdminComponents/UserManagement";
+
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -35,6 +38,7 @@ function App() {
         <Route path="/what-is" element={<WhatIsSection />} />
         <Route path="/about-us" element={<AboutSection />} />
         <Route path="/contact" element={<ContactSection />} />
+         main
 
         <Route
           path="/admin"

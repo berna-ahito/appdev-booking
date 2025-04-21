@@ -113,7 +113,7 @@ function Register() {
           </div>
           <div className="input-group">
             <label>Contact Number</label>
-            <input type="tel" placeholder="63+ xxx xxx xxxx" name="contact_number" onChange={handleChange} />
+            <input type="tel" placeholder="+63 xxx xxx xxxx" name="contact_number" onChange={handleChange} />
           </div>
 
           {/* Address */}
