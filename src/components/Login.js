@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CSS/Login.css";
 
+
+//Login function
 function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -27,8 +29,8 @@ function Login({ setIsLoggedIn }) {
 
       if (response.ok) {
         const data = await response.json();
+        //Debugginggg forrrrr adminnnn asa ka
         console.log("Login successful", data);
-
         localStorage.setItem("admin_id", data.admin_id);  
         localStorage.setItem("isLoggedIn", "true");
         console.log("Admin ID stored in localStorage:", data.admin_id);  

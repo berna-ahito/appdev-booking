@@ -11,6 +11,7 @@ import HomePage from "./AdminComponents/HomePage";
 import Sidebar from "./AdminComponents/Sidebar";
 import Announcements from "./AdminComponents/Announcements";
 import UserManagement from "./AdminComponents/UserManagement";
+import Settings from "./AdminComponents/Settings";
 
 
 
@@ -48,11 +49,19 @@ function App() {
           path="/admin/home"
           element={isLoggedIn ? <HomePage /> : <Navigate to="/login" />}
         />
+        
+        <Route
+          path="/admin/user-manage"
+          element={isLoggedIn ? <UserManagement /> : <Navigate to="/login" />}
+        />
         <Route
           path="/admin/announcements"
           element={isLoggedIn ? <Announcements /> : <Navigate to="/login" />}
         />
-
+        <Route
+          path="/admin/settings"
+          element={isLoggedIn ? <Settings /> : <Navigate to="/login" />}
+        />
         <Route
           path="/sidebar"
           element={isLoggedIn ? <Sidebar /> : <Navigate to="/login" />}

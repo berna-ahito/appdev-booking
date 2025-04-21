@@ -1,0 +1,167 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf9f9;
+    margin-bottom: 20px;
+  }
+  
+  .settings-h1 {
+    margin-left: 80px;
+    margin-top: 30px;
+    font-size: 26px;
+    color: #791d1d;
+  }
+  
+  .Upper-section,
+  .middle-section,
+  .lower-section {
+    margin-left: 80px;
+    margin-right: 50px;
+    background-color: #fff;
+    border: 2.5px solid #89343B;
+    border-radius: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    padding: 20px 30px;
+    position: relative;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: -10px 40px;
+    margin-top: 10px;
+  } 
+  .label {
+    font-size: 16px;
+    color: #89343B;
+    font-weight: 600;
+  }
+  .value {
+    font-size: 16px;
+    color:  #f0a300;
+    font-weight: 500;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .privacy-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .password-section,
+  .visibility-section {
+    flex: 1;
+  }
+  .password-section input,
+  .visibility-section select {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #F8C400;
+    border-radius: 12px;
+  }
+  .vertical-divider {
+    width: 2px;
+    background-color: #791d1d;
+    margin: 0 35px;
+    align-self: stretch;
+  }
+  
+  .manageVisibility {
+    margin-top: 0;
+  }
+  
+  .lblCurrent,
+  .lblNew,
+  .lblConfirm,
+  .lblVisibility {
+    font-weight: 600;
+    color: #791d1d;
+    margin-bottom: 4px;
+  }
+  
+  .txtVisibility {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .edit-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #791d1d;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .Name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #791d1d;
+  }
+  
+  .Email {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .middle-section h3,
+  .lower-section h3 {
+    color: #791d1d;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+  }
+  h4{
+    color: #791d1d;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    margin-top: -20px;
+  }
+
+  .txtFullName,
+  .txtAddress,
+  .txtContact,
+  .txtDob,
+  .txtEmail {
+    color: #f0a300;
+    margin-bottom: 8px;
+  }
+  
+    .txtCurrent, .txtNew,.txtConfirm {
+        border-radius: 12px;
+        border: 1px solid #F8C400;
+        color: #89343B;
+        padding: 10px;
+    }
+  
+  select.txtVisibility {
+    cursor: pointer;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #89343B;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
