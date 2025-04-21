@@ -13,6 +13,7 @@ import Announcements from "./AdminComponents/Announcements";
 import UserManagement from "./AdminComponents/UserManagement";
 
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
@@ -37,8 +38,7 @@ function App() {
         <Route path="/what-is" element={<WhatIsSection />} />
         <Route path="/about-us" element={<AboutSection />} />
         <Route path="/contact" element={<ContactSection />} />
-        <Route path="/sidebar" element={<Sidebar />} />
-        <Route path="/admin/user-manage" element={<UserManagement />} />
+         main
 
         <Route
           path="/admin"

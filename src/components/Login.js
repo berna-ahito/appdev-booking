@@ -5,6 +5,7 @@ import "./CSS/Login.css";
 function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [admin_id, setAdminId] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ function Login({ setIsLoggedIn }) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          admin_id: admin_id,
           name: username,
           password: password,
         }),
@@ -27,10 +29,12 @@ function Login({ setIsLoggedIn }) {
         const data = await response.json();
         console.log("Login successful", data);
 
-        setIsLoggedIn(true);
+        localStorage.setItem("admin_id", data.admin_id);  
         localStorage.setItem("isLoggedIn", "true");
+        console.log("Admin ID stored in localStorage:", data.admin_id);  
+        setIsLoggedIn(true);
 
-        navigate("/home"); 
+        navigate("/admin/home");
       } else {
         setError("Invalid username or password");
       }
@@ -39,7 +43,6 @@ function Login({ setIsLoggedIn }) {
       setError("Something went wrong. Please try again.");
     }
   };
-
 
   return (
     <>

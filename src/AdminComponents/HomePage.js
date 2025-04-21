@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import "./CSS/HomePage.css"; // your existing styles
+import "./CSS/HomePage.css"; 
 
 function HomePage() {
   return (

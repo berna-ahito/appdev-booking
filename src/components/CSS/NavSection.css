@@ -7,10 +7,9 @@
 }
 body{
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #89343B;
 }
-h1{
+.wild-teach{
+    font-family: 'Poppins', sans-serif;
     color: #89343B;
     font-size: 45px;
     margin: 10px 0;

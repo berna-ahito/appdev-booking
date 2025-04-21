@@ -1,0 +1,159 @@
+/* Title */
+.announcement {
+    color: #89343B;
+    font-size: 30px;
+    margin-left: 120px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Main Container */
+  .announcement-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px;
+    align-items: flex-start;
+  }
+  
+  /* Latest Announcement Section */
+  .latest-announcement {
+    background-color: #F8C400;
+    color: #89343B;
+    font-size: 30px;
+    width: 60%;
+    height: 240px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .latest-announcement h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Notes Section */
+  .notes-box {
+    background-color: #89343B;
+    color: #F8C400;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notes-box h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .notes-box ul {
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Bottom Buttons */
+  .bottom-buttons {
+    display: flex;
+    margin-left: 120px;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  /* Add (+) Button */
+  .add-button {
+    width: 120px;
+    height: 120px;
+    background-color: #E2DADA;
+    border-radius: 10px;
+    font-size: 50px;
+    color: #89343B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #d1caca;
+  }
+  
+  /* Drafts Box */
+  .drafts-box {
+    width: 160px;
+    height: 120px;
+    background-color: #89343B;
+    color: #F8C400;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drafts-number {
+    font-size: 40px;
+    margin: 0;
+  }
+  
+  .drafts-label {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  /* ======================= */
+  /* Dialog Styles */
+  /* ======================= */
+  .announcement-dialog {
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .dialog-input,
+  .dialog-textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .dialog-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .dialog-buttons button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #89343B;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .dialog-buttons button:hover {
+    background-color: #6e292f;
+  }
+  
