@@ -47,7 +47,7 @@ function Login({ setIsLoggedIn }) {
     await res.text();
     localStorage.setItem("isLoggedIn", "true");
     setIsLoggedIn(true);
-    navigate("/student/home");
+    navigate("/tutee/home");
   } catch (error) {
     setError(error.message);
   }
