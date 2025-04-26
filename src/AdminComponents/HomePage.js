@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import HeaderAdmin from "./HeaderAdmin"; 
-import "./CSS/HomePage.css";  
+import HeaderAdmin from "./HeaderAdmin";
+import "./CSS/HomePage.css";
 
 function HomePage() {
   return (
@@ -9,32 +9,33 @@ function HomePage() {
       <HeaderAdmin />
       <Sidebar />
 
-      <div className="homepage-content">
-        <h1 className="welcome-message">Welcome, Admin!</h1>
+      <div className="homepage-container">
+        <div className="homepage-content">
+          <div className="admin-info">
+            <h2>Admin123</h2>
+            <p className="admin-role">Admin</p>
+          </div>
 
-        <div className="dashboard-stats">
-          <div className="stat-card">
-            <h3>Total Tutee</h3>
-            <p>50</p>
+          <div className="dashboard-stats">
+            <div className="stat-card maroon">
+              <h3>Active Students</h3>
+              <p>15</p>
+            </div>
+            <div className="stat-card maroon">
+              <h3>Active Tutor</h3>
+              <p>10</p>
+            </div>
+            <div className="stat-card yellow">
+              <h3>Active Sessions</h3>
+              <p>22</p>
+            </div>
           </div>
-          <div className="stat-card">
-            <h3>Total Tutors</h3>
-            <p>30</p>
-          </div>
-          <div className="stat-card">
-            <h3>Total Sessions</h3>
-            <p>7</p>
-          </div>
-        </div>
 
-        <div className="quick-links">
-          <h2>Quick Actions</h2>
-          <ul>
-            <li><a href="/admin/user-manage">Manage Users</a></li>
-            <li><a href="/admin/session-manage">Manage Sessions</a></li>
-            <li><a href="/admin/announcements">View Announcements</a></li>
-            <li><a href="/admin/settings">Settings</a></li>
-          </ul>
+          <hr className="divider" />
+
+          <div className="announcements-card">
+            <h3>Announcements</h3>
+          </div>
         </div>
       </div>
     </div>
