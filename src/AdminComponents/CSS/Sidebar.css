@@ -9,7 +9,7 @@
 
 .sidebar {
   background-color: #F8C400;
-  width: 60px; /* collapsed width */
+  width: 60px; 
   height: 100vh;
   transition: width 0.3s ease-in-out;
   overflow: hidden;
@@ -22,7 +22,7 @@
 }
 
 .sidebar.open {
-  width: 200px; /* expanded width */
+  width: 200px;  
   align-items: flex-start;
   padding-left: 10px;
 }

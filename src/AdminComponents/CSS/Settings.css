@@ -26,7 +26,6 @@ body {
   padding: 20px 30px;
   position: relative;
 }
-
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -38,8 +37,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: -10px 40px;
   margin-top: 10px;
-}
-
+} 
 .label {
   font-size: 16px;
   color: #89343B;
@@ -47,7 +45,7 @@ body {
 }
 .value {
   font-size: 16px;
-  color: #f0a300;
+  color:  #f0a300;
   font-weight: 500;
 }
 
@@ -131,7 +129,7 @@ body {
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
-h4 {
+h4{
   color: #791d1d;
   font-size: 20px;
   margin-bottom: 15px;
@@ -148,14 +146,12 @@ h4 {
   margin-bottom: 8px;
 }
 
-.txtCurrent,
-.txtNew,
-.txtConfirm {
-  border-radius: 12px;
-  border: 1px solid #F8C400;
-  color: #89343B;
-  padding: 10px;
-}
+  .txtCurrent, .txtNew,.txtConfirm {
+      border-radius: 12px;
+      border: 1px solid #F8C400;
+      color: #89343B;
+      padding: 10px;
+  }
 
 select.txtVisibility {
   cursor: pointer;
@@ -166,16 +162,4 @@ hr {
   border-top: 1px solid #89343B;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.Profile-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.profile-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
 }

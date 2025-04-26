@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import HeaderAdmin from "./HeaderAdmin";  // Assuming you have a header component
-import "./CSS/HomePage.css";  // Assuming you're using the correct CSS file
+import HeaderAdmin from "./HeaderAdmin"; 
+import "./CSS/HomePage.css";  
 
 function HomePage() {
   return (
@@ -14,11 +14,11 @@ function HomePage() {
 
         <div className="dashboard-stats">
           <div className="stat-card">
-            <h3>Total Users</h3>
-            <p>1,245</p>
+            <h3>Total Tutee</h3>
+            <p>50</p>
           </div>
           <div className="stat-card">
-            <h3>Total Announcements</h3>
+            <h3>Total Tutors</h3>
             <p>30</p>
           </div>
           <div className="stat-card">

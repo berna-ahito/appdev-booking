@@ -1,5 +1,5 @@
 .user-management-content {
-    margin-left: 60px; /* Moves the content 10px to the right */
+    margin-left: 60px; 
   }
   
   .header-box {
@@ -15,8 +15,8 @@
 
 
   .view-button {
-    background-color: #800000; /* maroon */
-    color: #F8C400; /* yellow text */
+    background-color: #800000; 
+    color: #F8C400; 
     padding: 10px 20px;
     width: 200px;
     border: none;
@@ -32,7 +32,7 @@
   }
 
   .view-button:hover {
-    background-color: #a52a2a; /* lighter maroon */
+    background-color: #a52a2a; 
   }
   
   .top-controls {
@@ -138,10 +138,10 @@
   
   .page-button {
     width: 50px;
-    font-size: 1rem; /* Adjust text size */
-    border: 1px solid #800000; /* Maroon border */
+    font-size: 1rem; 
+    border: 1px solid #800000; 
     background-color: #ffffff90;
-    color: #800000; /* Maroon text */
+    color: #800000; 
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
@@ -150,7 +150,7 @@
   
   .page-button:hover {
     background-color: #800000;
-    color: #F8C400; /* Yellow text on hover */
+    color: #F8C400; 
   }
   
   .page-button.active {

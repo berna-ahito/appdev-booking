@@ -107,7 +107,6 @@ function Announcements() {
         </div>
       </div>
 
-      {/* Dialog Box */}
       <dialog ref={dialogRef} className="announcement-dialog">
         <h2>New Announcement</h2>
         <textarea
