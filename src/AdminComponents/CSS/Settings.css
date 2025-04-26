@@ -12,6 +12,24 @@ body {
   font-size: 26px;
   color: #791d1d;
 }
+.Upper-section {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.text-section {
+  flex-grow: 1;
+}
 
 .Upper-section,
 .middle-section,
@@ -104,7 +122,7 @@ body {
   top: 20px;
   right: 30px;
   background-color: #791d1d;
-  color: #fff;
+  color: #F8C400;
   border: none;
   padding: 6px 16px;
   border-radius: 20px;
