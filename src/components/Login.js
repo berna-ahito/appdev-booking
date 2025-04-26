@@ -32,27 +32,27 @@ function Login({ setIsLoggedIn }) {
   };
 
   const handleStudentLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:8080/student/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: studentEmail, password }),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        console.log("Error response from backend:", errorData);
-        throw new Error(errorData.message || "Invalid credentials");
-      }
-      await res.text();
-      localStorage.setItem("isLoggedIn", "true");
-      setIsLoggedIn(true);
-      navigate("/tutee/home");
-    } catch (error) {
-      setError(error.message);
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:8080/student/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: studentEmail, password }),
+    });
+    if (!res.ok) {
+      const errorData = await res.json();
+      console.log("Error response from backend:", errorData); // Log error details
+      throw new Error(errorData.message || "Invalid credentials");
     }
-  };
-  
+    await res.text();
+    localStorage.setItem("isLoggedIn", "true");
+    setIsLoggedIn(true);
+    navigate("/student/home");
+  } catch (error) {
+    setError(error.message);
+  }
+};
+
 
   const handleTutorLogin = async (e) => {
     e.preventDefault();
@@ -94,8 +94,8 @@ function Login({ setIsLoggedIn }) {
             Admin
           </button>
           <button
-            onClick={() => setRole("Tutee")}
-            className={role === "Tutee" ? "active" : ""}
+            onClick={() => setRole("student")}
+            className={role === "student" ? "active" : ""}
           >
             Student
           </button>
