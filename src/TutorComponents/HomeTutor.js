@@ -7,15 +7,7 @@ function HomeTutor() {
   <div>
     <HeaderTutor />
     <SideBarTutor />
-      <div className='chat-container'>
-        <div className='chat-box'>
-          <h1>Chat with Students</h1>
-          <div className='chat-message'>
-            <p>Student: Hello, I need help with my homework.</p>
-            <p>Tutor: Sure! What do you need help with?</p>
-          </div>
-      </div>
-    </div>  
+      
   </div>
   )
 }
