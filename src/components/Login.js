@@ -41,7 +41,7 @@ function Login({ setIsLoggedIn }) {
     });
     if (!res.ok) {
       const errorData = await res.json();
-      console.log("Error response from backend:", errorData); // Log error details
+      console.log("Error response from backend:", errorData); 
       throw new Error(errorData.message || "Invalid credentials");
     }
     await res.text();

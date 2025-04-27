@@ -1,0 +1,12 @@
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: -10px 40px;
+    margin-top: 10px;
+  } 
+  .address-grid input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #F8C400;
+    border-radius: 12px;
+  }
