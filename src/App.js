@@ -19,6 +19,8 @@ import Settings from "./AdminComponents/Settings";
 
 // Tutee Components
 import HomeTutee from "./TuteeComponents/HomeTutee";
+import MyBookings from "./TuteeComponents/MyBookings";
+
 
 // Tutor Components
 import HomeTutor from "./TutorComponents/HomeTutor";
@@ -63,6 +65,7 @@ function App() {
 
         {/* Tutee Routes */}
         <Route path="/tutee/home" element={isLoggedIn ? <HomeTutee /> : <Navigate to="/login" />} />
+        <Route path="/tutee/my-bookings" element={isLoggedIn ? <MyBookings /> : <Navigate to="/login" />} />
 
         {/* Tutor Routes */}
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />
