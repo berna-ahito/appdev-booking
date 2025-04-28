@@ -1,7 +1,5 @@
 import React from "react";
 import SidebarTutee from "./SidebarTutee";
-// import StudentHeader from "./StudentHeader";
-
 import "./CSS/ProfileTutee.css";
 
 const ProfileTutee = () => {
