@@ -15,11 +15,14 @@ import HomePage from "./AdminComponents/HomePage";
 import Sidebar from "./AdminComponents/Sidebar";
 import Announcements from "./AdminComponents/Announcements";
 import UserManagement from "./AdminComponents/UserManagement";
+import SessionManagement from "./AdminComponents/SessionManagement";
 import Settings from "./AdminComponents/Settings";
 
 // Tutee Components
 import HomeTutee from "./TuteeComponents/HomeTutee";
 import MyBookings from "./TuteeComponents/MyBookings";
+import MessagesTutee from "./TuteeComponents/MessagesTutee";
+import ProfileTutee from "./TuteeComponents/ProfileTutee";
 
 
 // Tutor Components
@@ -59,6 +62,7 @@ function App() {
         <Route path="/admin" element={isLoggedIn ? <Sidebar /> : <Navigate to="/login" />} />
         <Route path="/admin/home" element={isLoggedIn ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/admin/user-manage" element={isLoggedIn ? <UserManagement /> : <Navigate to="/login" />} />
+        <Route path="/admin/session-manage" element={isLoggedIn ? <SessionManagement /> : <Navigate to="/login" />} />
         <Route path="/admin/announcements" element={isLoggedIn ? <Announcements /> : <Navigate to="/login" />} />
         <Route path="/admin/settings" element={isLoggedIn ? <Settings /> : <Navigate to="/login" />} />
         <Route path="/sidebar" element={isLoggedIn ? <Sidebar /> : <Navigate to="/login" />} />
@@ -66,6 +70,8 @@ function App() {
         {/* Tutee Routes */}
         <Route path="/tutee/home" element={isLoggedIn ? <HomeTutee /> : <Navigate to="/login" />} />
         <Route path="/tutee/my-bookings" element={isLoggedIn ? <MyBookings /> : <Navigate to="/login" />} />
+        <Route path="/tutee/tutee-messages" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} />
+        <Route path="/tutee/profile-tutee" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} /> 
 
         {/* Tutor Routes */}
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />
