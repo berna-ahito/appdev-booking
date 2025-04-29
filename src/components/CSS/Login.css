@@ -1,4 +1,10 @@
 
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
 .bg-image {
     background-image: url('../../images/bgLogin.jpg');
     background-size: cover;
