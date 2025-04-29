@@ -10,10 +10,9 @@ function Login({ setIsLoggedIn }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // Reset error message
+    setError(""); 
 
     try {
-      // Step 1: Get the role of the user
       const roleRes = await fetch(
         `http://localhost:8080/api/users/role?email=${encodeURIComponent(email)}`
       );
@@ -26,32 +25,31 @@ function Login({ setIsLoggedIn }) {
       const roleRaw = await roleRes.text();
       const role = roleRaw.trim().toLowerCase();
 
-      // Step 2: Based on role, determine endpoint and request body
       let endpoint = "";
       let requestBody = {};
 
       switch (role) {
         case "admin":
           endpoint = "admin/login";
-          requestBody = { email: email, password };
+          requestBody = { email, password };
           break;
         case "tutee":
           endpoint = "student/login";
-          requestBody = { email: email, password };
+          requestBody = { email, password };
           break;
         case "tutor":
           endpoint = "tutor/login";
-          requestBody = { email: email, password };
+          requestBody = { email, password };
           break;
         default:
           setError("Unknown role or role not assigned.");
           return;
       }
-
+      //debugging
+      console.log("Role:", role);
       console.log("Sending to:", `http://localhost:8080/${endpoint}`);
       console.log("Request Body:", requestBody);
 
-      // Step 3: Attempt to login
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -72,12 +70,10 @@ function Login({ setIsLoggedIn }) {
       console.log("Server response:", message);
       
 
-      // Step 4: Save session
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("role", role);
 
-      // Step 5: Navigate based on role
       navigate(`/${role}/home`);
     } catch (err) {
       console.error("Login error:", err);
