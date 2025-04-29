@@ -70,8 +70,8 @@ function App() {
         {/* Tutee Routes */}
         <Route path="/tutee/home" element={isLoggedIn ? <HomeTutee /> : <Navigate to="/login" />} />
         <Route path="/tutee/my-bookings" element={isLoggedIn ? <MyBookings /> : <Navigate to="/login" />} />
-        <Route path="/tutee/tutee-messages" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} />
-        <Route path="/tutee/profile-tutee" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} /> 
+        <Route path="/tutee/message" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} />
+        <Route path="/tutee/profile" element={isLoggedIn ? <ProfileTutee /> : <Navigate to="/login" />} /> 
 
         {/* Tutor Routes */}
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />
