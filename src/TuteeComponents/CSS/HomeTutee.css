@@ -1,0 +1,73 @@
+.home-tutee-container {
+    position: relative;
+  }
+  
+  .welcome-container {
+    margin: 50px 50px 20px 120px; /* adjust for sidebar space */
+    padding: 35px;
+    background: linear-gradient(90deg, #F8C400 0%, #812c33 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+  
+  .welcome-container h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  
+  .welcome-container p {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  .tutoring-schedule-container {
+    margin: 40px 50px 20px 120px;
+  }
+
+  h2 {
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+} 
+  .tutor-card {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #8b0000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  
+  .tutor-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #8b0000;
+  }
+  
+  .tutor-subject {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 20px;
+  }
+  
+  .view-button {
+    background-color: #8b0000;
+    color: yellow;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .view-button:hover {
+    background-color: #a83232;
+  }
+  

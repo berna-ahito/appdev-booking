@@ -1,0 +1,65 @@
+.my-bookings-container {
+    margin-left: 250px; /* to adjust for sidebar */
+    padding: 20px;
+  }
+  
+  .my-bookings-container h1 {
+    color: #7b2d2f;
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .filter-buttons button {
+    background-color: #fce088;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .bookings-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .booking-card {
+    border: 1px solid #d9a9a9;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    background-color: #fff;
+    color: #7b2d2f;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-card p {
+    margin: 5px 0;
+  }
+  
+  .pagination {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .page-button {
+    background-color: #7b2d2f;
+    color: white;
+    border: none;
+    margin: 0 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .page-button.active {
+    background-color: #d9a9a9;
+    color: #7b2d2f;
+  }
+  
