@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderTutee from './HeaderTutee'; 
-import SidebarTutee from './SidebarTutee';
 import './CSS/MyBookings.css'; 
 
 
@@ -8,7 +7,6 @@ function MyBookings() {
   return (
     <div>
       <HeaderTutee />
-      <SidebarTutee />
 
       <div className="my-bookings-container">
         <h1>My Bookings</h1>

@@ -12,7 +12,6 @@ function Messages() {
   return (
     <div>
       <HeaderTutor />
-      <SideBarTutor />
       
       <div className="chat-container">
         

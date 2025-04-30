@@ -23,7 +23,6 @@ function HomeTutee() {
   return (
     <div className="home-tutee-container">
       <HeaderTutee />
-      <SidebarTutee />
 
       {/* Welcome Container */}
       <div className="welcome-container">

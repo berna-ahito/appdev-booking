@@ -190,7 +190,6 @@ function ProfileStudent() {
   return (
     <div>
       <SideBarTutor />
-      <HeaderTutor />
       <h1 className="settings-h1">Profile</h1>
 
       {/* Upper Section */}
