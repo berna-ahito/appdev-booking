@@ -46,12 +46,24 @@ function DropdownButton({ label, options, selected, setSelected }) {
 function ManageSession() {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
+  const [sessions, setSessions] = useState([]);
 
   const years = Array.from({ length: 10 }, (_, i) => 2020 + i);
   const months = [
     "January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"
   ];
+
+  // Fetch sessions based on selected year and month
+  useEffect(() => {
+    if (selectedYear && selectedMonth) {
+      // Assuming your backend API supports filtering sessions by year and month
+      fetch(`http://localhost:8080/api/sessions?year=${selectedYear}&month=${selectedMonth}`)
+        .then(response => response.json())
+        .then(data => setSessions(data))
+        .catch(error => console.error("Error fetching sessions:", error));
+    }
+  }, [selectedYear, selectedMonth]);
 
   return (
     <div>
@@ -78,20 +90,22 @@ function ManageSession() {
           </div>
 
           <div className="session-cards">
-            {[1, 2, 3].map((_, index) => (
-              <div key={index} className="session-card">
-                <p><strong>Student Name:</strong></p>
-                <p>Subject</p>
-                <p>Date</p>
-                <p>Duration</p>
-                <p>{selectedMonth || "Month"}</p>
-                <p>{selectedYear || "Year"}</p>
-                <div className="card-btn-group">
-                  <button className="card-btn btn-edit">Edit</button>
-                  <button className="card-btn btn-cancel">Cancel</button>
+            {sessions.length > 0 ? (
+              sessions.map((session, index) => (
+                <div key={index} className="session-card">
+                  <p><strong>Student Name:</strong> {session.studentName}</p>
+                  <p><strong>Subject:</strong> {session.subject}</p>
+                  <p><strong>Date:</strong> {session.date}</p>
+                  <p><strong>Duration:</strong> {session.duration}</p>
+                  <div className="card-btn-group">
+                    <button className="card-btn btn-edit">Edit</button>
+                    <button className="card-btn btn-cancel">Cancel</button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No sessions available for the selected year and month.</p>
+            )}
           </div>
 
           <div className="pagination">

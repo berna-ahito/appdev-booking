@@ -1,12 +1,18 @@
 .admin-header {
-    background-color: #ffffff;
-    color: #89343B;
-    margin-left: 40px; 
-    font-size: 20px;
-    min-height: 40px;
-    font-family: 'Poppins', sans-serif;
-    padding: 20px 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #89343B;
-  }
-  
+  background-color: #ffffff;
+  color: #89343B;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #89343B;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 120px;
+  padding: 0 60px;
+}
+
+.header-title {
+  margin-left: 40px;
+  font-size: 45px;
+  font-weight: bold;
+}
