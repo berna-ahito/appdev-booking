@@ -29,6 +29,8 @@ import ProfileTutee from "./TuteeComponents/ProfileTutee";
 import HomeTutor from "./TutorComponents/HomeTutor";
 import Messages from "./TutorComponents/Messages";
 import ProfileTutor from "./TutorComponents/ProfileTutor";
+import ManageSession from "./TutorComponents/ManageSession";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -77,6 +79,7 @@ function App() {
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />
         <Route path="/tutor/profile" element={isLoggedIn ? <ProfileTutor /> : <Navigate to="/login" />} />
         <Route path="/tutor/message" element={isLoggedIn ? <Messages /> : <Navigate to="/login" />} />
+        <Route path="/tutor/manage" element={isLoggedIn ? <ManageSession /> : <Navigate to="/login" />} />
 
         {/* Redirect to login if not logged in */}
       </Routes>

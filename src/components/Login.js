@@ -45,7 +45,6 @@ function Login({ setIsLoggedIn }) {
           setError("Unknown role or role not assigned.");
           return;
       }
-      //debugging
       console.log("Role:", role);
       console.log("Sending to:", `http://localhost:8080/${endpoint}`);
       console.log("Request Body:", requestBody);

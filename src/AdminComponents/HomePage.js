@@ -8,8 +8,6 @@ function HomePage() {
   const [activeTutors, setActiveTutors] = useState(0); 
   const [activeSessions, setActiveSessions] = useState(0); 
   const [activeAnnouncements, setActiveAnnouncements] = useState([]); 
-
-  // Fetch active students count
   useEffect(() => {
     fetch("http://localhost:8080/student/activeStudentsCount")
       .then((response) => response.json())
