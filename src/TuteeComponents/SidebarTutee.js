@@ -28,8 +28,8 @@ function SidebarTutee() {
         <Link to="/tutee/profile" className="sidebar-link">Profile</Link>
         <Link to="/tutee/about-us" className="sidebar-link">About Us</Link>
         <Link to="/tutee/contact" className="sidebar-link">Contact</Link>
-        <Link to="/admin/settings" className="sidebar-link">Settings</Link>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <Link to="/tutee/settings" className="sidebar-link">Settings</Link>
+        <button onClick={handleLogout} className="logout-btnTutee">Logout</button>
       </div>
     </div>
   );

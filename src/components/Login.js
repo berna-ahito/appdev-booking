@@ -10,7 +10,7 @@ function Login({ setIsLoggedIn }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); 
+    setError("");
 
     try {
       const roleRes = await fetch(
@@ -26,29 +26,22 @@ function Login({ setIsLoggedIn }) {
       const role = roleRaw.trim().toLowerCase();
 
       let endpoint = "";
-      let requestBody = {};
+      let requestBody = { email, password };
 
       switch (role) {
         case "admin":
           endpoint = "admin/login";
-          requestBody = { email, password };
           break;
         case "tutee":
           endpoint = "student/login";
-          requestBody = { email, password };
           break;
         case "tutor":
           endpoint = "tutor/login";
-          requestBody = { email, password };
           break;
         default:
           setError("Unknown role or role not assigned.");
           return;
       }
-      //debugging
-      console.log("Role:", role);
-      console.log("Sending to:", `http://localhost:8080/${endpoint}`);
-      console.log("Request Body:", requestBody);
 
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
@@ -66,10 +59,45 @@ function Login({ setIsLoggedIn }) {
         return;
       }
 
-      const message = await loginRes.text();
-      console.log("Server response:", message);
-      
+      const contentType = loginRes.headers.get("content-type");
+      let responseData;
 
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await loginRes.json();
+        console.log("Server response (JSON):", responseData);
+
+        // Store ID if it's returned
+        if (role === "admin" && responseData.admin_id) {
+          localStorage.setItem("admin_id", responseData.admin_id);
+        } else if (role === "tutee" && responseData.student_id) {
+          localStorage.setItem("student_id", responseData.student_id);
+        } else if (role === "tutor" && responseData.tutor_id) {
+          localStorage.setItem("tutor_id", responseData.tutor_id);
+          localStorage.setItem("student_id", responseData.student_id); // Needed for profile management
+        }
+      } else {
+        const text = await loginRes.text();
+        console.log("Server response (text):", text);
+
+        // Manually fetch tutor ID after successful login (fallback mechanism)
+        if (role === "tutor" && text === "Login successful") {
+          const tutorsRes = await fetch("http://localhost:8080/student/all");
+          if (tutorsRes.ok) {
+            const tutors = await tutorsRes.json();
+            const tutor = tutors.find((t) => t.email === email);
+            if (tutor) {
+              localStorage.setItem("tutor_id", tutor.tutor_id);
+              localStorage.setItem("student_id", tutor.student_id); // needed for password update
+              console.log("Tutor ID stored:", tutor.tutor_id);
+              console.log("Student ID stored (for password):", tutor.student_id);
+            } else {
+              console.warn("Tutor not found in list");
+            }
+          }
+        }
+      }
+
+      // Save login state
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("role", role);
