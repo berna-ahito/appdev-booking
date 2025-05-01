@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import HeaderTutor from './HeaderTutor';
-import SideBarTutor from './SideBarTutor';
 import './CSS/ProfileTutor.css';
 
 function ProfileStudent() {
@@ -189,7 +188,7 @@ function ProfileStudent() {
 
   return (
     <div>
-      <SideBarTutor />
+      <HeaderTutor />
       <h1 className="settings-h1">Profile</h1>
 
       {/* Upper Section */}

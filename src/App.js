@@ -30,6 +30,7 @@ import HomeTutor from "./TutorComponents/HomeTutor";
 import Messages from "./TutorComponents/Messages";
 import ProfileTutor from "./TutorComponents/ProfileTutor";
 import SidebarTutor from "./TutorComponents/SideBarTutor";
+import SettingsTutor from "./TutorComponents/SettingsTutor";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -90,6 +91,7 @@ function App() {
         <Route path="/tutor/message" element={isLoggedIn ? <Messages /> : <Navigate to="/login" />} />
         <Route path="/tutor/About-Us" element={isLoggedIn ? <AboutSection /> : <Navigate to="/login" />} />
         <Route path="/tutor/Contact" element={isLoggedIn ? <ContactSection /> : <Navigate to="/login" />} />
+        <Route path="/tutor/settings" element={isLoggedIn ? <SettingsTutor /> : <Navigate to="/login" />} />
       </Routes>
     </>
   );

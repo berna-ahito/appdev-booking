@@ -1,5 +1,4 @@
 import React from 'react';
-import SideBarTutor from './SideBarTutor';
 import HeaderTutor from './HeaderTutor';
 import './CSS/Messages.css';
 import juviePic from '../images/juviePic.jpg';

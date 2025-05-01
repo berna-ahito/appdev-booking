@@ -11,23 +11,23 @@ function Login({ setIsLoggedIn }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-
+  
     try {
       const roleRes = await fetch(
         `http://localhost:8080/api/users/role?email=${encodeURIComponent(email)}`
       );
-
+  
       if (!roleRes.ok) {
         setError("Email not found or server error.");
         return;
       }
-
+  
       const roleRaw = await roleRes.text();
       const role = roleRaw.trim().toLowerCase();
-
+  
       let endpoint = "";
       let requestBody = { email, password };
-
+  
       switch (role) {
         case "admin":
           endpoint = "admin/login";
@@ -42,72 +42,40 @@ function Login({ setIsLoggedIn }) {
           setError("Unknown role or role not assigned.");
           return;
       }
-
+  
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-
-      if (loginRes.status === 401) {
-        setError("Unauthorized: Invalid email or password.");
-        return;
-      }
-
+  
       if (!loginRes.ok) {
-        setError("Login failed. Please try again.");
+        const errorText = await loginRes.text();  // Get the server's error message
+        console.log("Login error response:", errorText);
+        setError(`Login failed: ${errorText}`);
         return;
       }
-
-      const contentType = loginRes.headers.get("content-type");
-      let responseData;
-
-      if (contentType && contentType.includes("application/json")) {
-        responseData = await loginRes.json();
-        console.log("Server response (JSON):", responseData);
-
-        // Store ID if it's returned
-        if (role === "admin" && responseData.admin_id) {
-          localStorage.setItem("admin_id", responseData.admin_id);
-        } else if (role === "tutee" && responseData.student_id) {
-          localStorage.setItem("student_id", responseData.student_id);
-        } else if (role === "tutor" && responseData.tutor_id) {
-          localStorage.setItem("tutor_id", responseData.tutor_id);
-          localStorage.setItem("student_id", responseData.student_id); // Needed for profile management
-        }
-      } else {
-        const text = await loginRes.text();
-        console.log("Server response (text):", text);
-
-        // Manually fetch tutor ID after successful login (fallback mechanism)
-        if (role === "tutor" && text === "Login successful") {
-          const tutorsRes = await fetch("http://localhost:8080/student/all");
-          if (tutorsRes.ok) {
-            const tutors = await tutorsRes.json();
-            const tutor = tutors.find((t) => t.email === email);
-            if (tutor) {
-              localStorage.setItem("tutor_id", tutor.tutor_id);
-              localStorage.setItem("student_id", tutor.student_id); // needed for password update
-              console.log("Tutor ID stored:", tutor.tutor_id);
-              console.log("Student ID stored (for password):", tutor.student_id);
-            } else {
-              console.warn("Tutor not found in list");
-            }
-          }
-        }
+  
+      const responseData = await loginRes.json();
+      console.log("Server response (JSON):", responseData);
+  
+      if (responseData.tutor_id) {
+        localStorage.setItem("tutor_id", responseData.tutor_id);
+        localStorage.setItem("student_id", responseData.student_id);  // Needed for profile management
       }
-
-      // Save login state
+  
+      // Handle other roles as well...
+  
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("role", role);
-
       navigate(`/${role}/home`);
     } catch (err) {
       console.error("Login error:", err);
       setError("Server error. Please try again later.");
     }
   };
+  
 
   return (
     <>
