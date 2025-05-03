@@ -50,7 +50,7 @@ function Login({ setIsLoggedIn }) {
       });
   
       if (!loginRes.ok) {
-        const errorText = await loginRes.text();  // Get the server's error message
+        const errorText = await loginRes.text();  
         console.log("Login error response:", errorText);
         setError(`Login failed: ${errorText}`);
         return;
