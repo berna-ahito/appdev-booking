@@ -23,7 +23,7 @@ function SideBarTutor() {
         <Link to="/tutor/profile" className="sidebar-link">Profile</Link>
         <Link to="/tutor/about-us" className="sidebar-link">About Us</Link>
         <Link to="/tutor/contact" className="sidebar-link">Contact</Link>
-        <Link to="/admin/settings" className="sidebar-link">Settings</Link>
+        <Link to="/tutor/settings" className="sidebar-link">Settings</Link>
         <button onClick={handleLogout} className="logout-btn">Logout</button>
       </div>
 

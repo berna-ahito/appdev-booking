@@ -23,14 +23,15 @@ import HomeTutee from "./TuteeComponents/HomeTutee";
 import MyBookings from "./TuteeComponents/MyBookings";
 import MessagesTutee from "./TuteeComponents/MessagesTutee";
 import ProfileTutee from "./TuteeComponents/ProfileTutee";
-
+import SidebarTutee from "./TuteeComponents/SidebarTutee";
 
 // Tutor Components
 import HomeTutor from "./TutorComponents/HomeTutor";
 import Messages from "./TutorComponents/Messages";
 import ProfileTutor from "./TutorComponents/ProfileTutor";
 import ManageSession from "./TutorComponents/ManageSession";
-
+import SidebarTutor from "./TutorComponents/SideBarTutor";
+import SettingsTutor from "./TutorComponents/SettingsTutor";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,6 +43,10 @@ function App() {
     location.pathname.startsWith("/tutee") ||
     location.pathname.startsWith("/tutor");
 
+  // Only display Sidebar on Tutor pages, but exclude /tutor/About-Us and /tutor/Contact
+  const showSidebar = location.pathname.startsWith("/tutor") && !location.pathname.includes("About-Us") && !location.pathname.includes("Contact");
+  const showSidebarTutee = location.pathname.startsWith("/tutee") && !location.pathname.includes("About-Us") && !location.pathname.includes("Contact");
+
   useEffect(() => {
     const loggedInStatus = localStorage.getItem("isLoggedIn");
     setIsLoggedIn(loggedInStatus === "true");
@@ -50,6 +55,10 @@ function App() {
   return (
     <>
       {!hideNav && <NavSection />}
+
+      {showSidebar && <SidebarTutor />}
+
+      {showSidebarTutee && <SidebarTutee />}
 
       <Routes>
         {/* Public Pages */}
@@ -73,15 +82,22 @@ function App() {
         <Route path="/tutee/home" element={isLoggedIn ? <HomeTutee /> : <Navigate to="/login" />} />
         <Route path="/tutee/my-bookings" element={isLoggedIn ? <MyBookings /> : <Navigate to="/login" />} />
         <Route path="/tutee/message" element={isLoggedIn ? <MessagesTutee /> : <Navigate to="/login" />} />
-        <Route path="/tutee/profile" element={isLoggedIn ? <ProfileTutee /> : <Navigate to="/login" />} /> 
+        <Route path="/tutee/profile" element={isLoggedIn ? <ProfileTutee /> : <Navigate to="/login" />} />
+        <Route path="/tutee/About-Us" element={isLoggedIn ? <AboutSection /> : <Navigate to="/login" />} />
+        <Route path="/tutee/Contact" element={isLoggedIn ? <ContactSection /> : <Navigate to="/login" />} />
 
         {/* Tutor Routes */}
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />
         <Route path="/tutor/profile" element={isLoggedIn ? <ProfileTutor /> : <Navigate to="/login" />} />
         <Route path="/tutor/message" element={isLoggedIn ? <Messages /> : <Navigate to="/login" />} />
+
         <Route path="/tutor/manage" element={isLoggedIn ? <ManageSession /> : <Navigate to="/login" />} />
 
         {/* Redirect to login if not logged in */}
+
+        <Route path="/tutor/About-Us" element={isLoggedIn ? <AboutSection /> : <Navigate to="/login" />} />
+        <Route path="/tutor/Contact" element={isLoggedIn ? <ContactSection /> : <Navigate to="/login" />} />
+        <Route path="/tutor/settings" element={isLoggedIn ? <SettingsTutor /> : <Navigate to="/login" />} />
       </Routes>
     </>
   );
