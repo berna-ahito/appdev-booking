@@ -68,7 +68,6 @@ function ManageSession() {
   return (
     <div>
       <HeaderTutor />
-      <SideBarTutor />
 
       <div className="manage-session-container">
         <div className="manage-session-content">

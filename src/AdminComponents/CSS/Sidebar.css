@@ -79,3 +79,61 @@
 .sidebar.open .logout-btn {
   opacity: 1;
 }
+/* Overlay for the dialog */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+}
+
+/* Dialog box container */
+.logout-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffbea;
+  border: 2px solid maroon;
+  border-radius: 16px;
+  padding: 25px 30px;
+  z-index: 1060;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif;
+  color: maroon;
+}
+
+/* Dialog heading */
+.logout-dialog h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: maroon;
+}
+
+/* Dialog buttons */
+.dialog-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.dialog-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: maroon;
+  color: #F8C400;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-buttons button:hover {
+  background-color: #8b0000;
+}
+
