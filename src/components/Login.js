@@ -10,75 +10,77 @@ function Login({ setIsLoggedIn }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); 
-
+    setError("");
+  
     try {
       const roleRes = await fetch(
         `http://localhost:8080/api/users/role?email=${encodeURIComponent(email)}`
       );
-
+  
       if (!roleRes.ok) {
         setError("Email not found or server error.");
         return;
       }
-
+  
       const roleRaw = await roleRes.text();
       const role = roleRaw.trim().toLowerCase();
-
+  
       let endpoint = "";
-      let requestBody = {};
-
+      let requestBody = { email, password };
+  
       switch (role) {
         case "admin":
           endpoint = "admin/login";
-          requestBody = { email, password };
           break;
         case "tutee":
           endpoint = "student/login";
-          requestBody = { email, password };
           break;
         case "tutor":
           endpoint = "tutor/login";
-          requestBody = { email, password };
           break;
         default:
           setError("Unknown role or role not assigned.");
           return;
       }
+
       console.log("Role:", role);
       console.log("Sending to:", `http://localhost:8080/${endpoint}`);
       console.log("Request Body:", requestBody);
+
 
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-
-      if (loginRes.status === 401) {
-        setError("Unauthorized: Invalid email or password.");
-        return;
-      }
-
+  
       if (!loginRes.ok) {
-        setError("Login failed. Please try again.");
+        const errorText = await loginRes.text();  
+        console.log("Login error response:", errorText);
+        setError(`Login failed: ${errorText}`);
         return;
       }
-
-      const message = await loginRes.text();
-      console.log("Server response:", message);
-      
-
+  
+      const responseData = await loginRes.json();
+      console.log("Server response (JSON):", responseData);
+  
+      if (responseData.tutor_id) {
+        localStorage.setItem("tutor_id", responseData.tutor_id);
+        localStorage.setItem("student_id", responseData.student_id);  // Needed for profile management
+      }
+  
+      // Handle other roles as well...
+  
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("role", role);
-
       navigate(`/${role}/home`);
     } catch (err) {
       console.error("Login error:", err);
       setError("Server error. Please try again later.");
     }
   };
+  
 
   return (
     <>

@@ -1,11 +1,9 @@
 import React from "react";
-import SidebarTutee from "./SidebarTutee";
 import "./CSS/ProfileTutee.css";
 
 const ProfileTutee = () => {
   return (
     <div className="main-layout">
-    <SidebarTutee />
     <div className="content-area">
     
     <div className="profile-container">

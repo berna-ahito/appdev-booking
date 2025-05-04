@@ -1,5 +1,4 @@
 import React from 'react';
-import SidebarTutee from './SidebarTutee';
 import HeaderTutee from './HeaderTutee';
 import './CSS/MessagesTutee.css';
 import juviePic from '../images/juviePic.jpg';
@@ -12,7 +11,6 @@ function MessagesTutee() {
   return (
     <div>
       <HeaderTutee />
-      <SidebarTutee />
       
       <div className="chat-container">
         
