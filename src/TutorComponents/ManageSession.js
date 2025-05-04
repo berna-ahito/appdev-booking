@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import SideBarTutor from "./SideBarTutor";
 import HeaderTutor from "./HeaderTutor";
 import "./CSS/ManageSession.css";
 
@@ -68,7 +67,6 @@ function ManageSession() {
   return (
     <div>
       <HeaderTutor />
-      <SideBarTutor />
 
       <div className="manage-session-container">
         <div className="manage-session-content">

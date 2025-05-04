@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CSS/WhatIsSection.css';
 
 function WhatIsSection() {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="what-is-container">
       <div className="content-box">
@@ -11,7 +18,9 @@ function WhatIsSection() {
           Best of all, everything happens right on campus, making learning more convenient, efficient, and rewarding for everyone!
         </p>
         <p className="call-to-action-text"><b>Join the Movement Today! Start Your Journey!</b></p>
-        <button className="call-to-action">Be Part of It</button>
+        <button className="call-to-action" onClick={handleRedirect}>
+          Be Part of It
+        </button>
       </div>
     </div>
   );

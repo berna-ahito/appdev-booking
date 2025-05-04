@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './CSS/SideBarTutor.css';
 
 function SideBarTutor() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsOpen(prev => !prev);
@@ -11,7 +12,7 @@ function SideBarTutor() {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-    window.location.href = "/login";
+    navigate("/");
   };
 
   return (
@@ -24,7 +25,9 @@ function SideBarTutor() {
         <Link to="/tutor/about-us" className="sidebar-link">About Us</Link>
         <Link to="/tutor/contact" className="sidebar-link">Contact</Link>
         <Link to="/tutor/settings" className="sidebar-link">Settings</Link>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        
+        <div onClick={handleLogout} className="sidebar-link">Logout</div>
+
       </div>
 
       <div className="toggle-btn" onClick={toggleSidebar}>

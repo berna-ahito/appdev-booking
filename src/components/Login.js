@@ -68,13 +68,12 @@ function Login({ setIsLoggedIn }) {
           localStorage.setItem("student_id", responseData.student_id);
       } else if (role === "tutor") {
           localStorage.setItem("tutor_id", responseData.tutor_id);
-          localStorage.setItem("student_id", responseData.student_id);  // For profile mgmt
+          localStorage.setItem("name", responseData.name);
+          localStorage.setItem("student_id", responseData.student_id); 
       } else if (role === "admin") {
           localStorage.setItem("admin_id", responseData.admin_id);
+          localStorage.setItem("name", responseData.name);
       }
-
-  
-      // Handle other roles as well...
   
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);
