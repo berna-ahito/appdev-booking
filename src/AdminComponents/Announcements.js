@@ -6,68 +6,88 @@ import HeaderAdmin from "./HeaderAdmin";
 
 function Announcements() {
   const dialogRef = useRef(null);
+  const noteDialogRef = useRef(null);
   const [announcements, setAnnouncements] = useState([]);
   const [newContent, setNewContent] = useState("");
+  const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
 
   const openDialog = () => dialogRef.current.showModal();
   const closeDialog = () => dialogRef.current.close();
 
+  const openNoteDialog = (announcement) => {
+    setSelectedAnnouncement(announcement);
+    noteDialogRef.current.showModal();
+  };
+
+  const closeNoteDialog = () => {
+    noteDialogRef.current.close();
+    setSelectedAnnouncement(null);
+  };
+
   // Fetch announcements from the server
   useEffect(() => {
+    fetchAnnouncements();
+  }, []);
+
+  const fetchAnnouncements = () => {
     axios
       .get("http://localhost:8080/announcement/getAllAnnounce")
       .then((response) => {
         const sorted = response.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-        //Keeping 5 announcement
-        setAnnouncements(sorted.slice(0, 5)); 
+        setAnnouncements(sorted.slice(0, 5)); // Keep only the latest 5
       })
       .catch((error) => console.error("Error fetching announcements:", error));
-  }, []);
-  
+  };
 
-  //For adding announcement
+  // Add new announcement
   const handleAdd = () => {
-    const storedAdminId = localStorage.getItem("admin_id"); 
+    const storedAdminId = localStorage.getItem("admin_id");
     if (!storedAdminId) {
       console.error("Admin not logged in");
       return;
     }
-    //Debugging time!!!!!
+
     const validAdminId = parseInt(storedAdminId, 10);
     if (isNaN(validAdminId)) {
       console.error("Invalid admin ID");
       return;
     }
-    
+
     const newAnnouncement = {
-      admin: { admin_id: validAdminId },  
+      admin: { admin_id: validAdminId },
       message: newContent,
       created_at: new Date().toISOString(),
     };
 
-    console.log("Request Payload:", newAnnouncement); 
-    //Auto refresh
     axios
-    .post("http://localhost:8080/announcement/addAnnounce", newAnnouncement)
-    .then(() => {
-      // Re-fetch all announcements
-      axios
-        .get("http://localhost:8080/announcement/getAllAnnounce")
-        .then((response) => setAnnouncements(response.data))
-        .catch((error) =>
-          console.error("Error fetching announcements:", error)
-        );
-
-      setNewContent("");
-      closeDialog();
-    })
-    .catch((error) => {
-      console.error("Error adding announcement:", error);
-      console.error("Error details:", error.response);
-    });
+      .post("http://localhost:8080/announcement/addAnnounce", newAnnouncement)
+      .then(() => {
+        fetchAnnouncements();
+        setNewContent("");
+        closeDialog();
+      })
+      .catch((error) => {
+        console.error("Error adding announcement:", error);
+      });
   };
 
-  //For the latest announcement
+  // Delete selected announcement
+  const handleDelete = () => {
+    if (!selectedAnnouncement) return;
+
+    axios
+      .delete(`http://localhost:8080/announcement/delete/${selectedAnnouncement.announcement_id}`)
+      .then(() => {
+        setAnnouncements((prev) =>
+          prev.filter((a) => a.announcement_id !== selectedAnnouncement.announcement_id)
+        );
+        closeNoteDialog();
+      })
+      .catch((error) => {
+        console.error("Error deleting announcement:", error);
+      });
+  };
+
   const latestAnnouncement =
     announcements.length > 0 ? announcements[announcements.length - 1] : null;
 
@@ -93,7 +113,9 @@ function Announcements() {
           <h3>Notes</h3>
           <ul>
             {announcements.map((a, i) => (
-              <li key={i}>{a.message}</li>
+              <li key={i} className="note-item" onClick={() => openNoteDialog(a)}>
+                {a.message}
+              </li>
             ))}
           </ul>
         </div>
@@ -107,6 +129,7 @@ function Announcements() {
         </div>
       </div>
 
+      {/* Add Announcement Dialog */}
       <dialog ref={dialogRef} className="announcement-dialog">
         <h2>New Announcement</h2>
         <textarea
@@ -119,6 +142,20 @@ function Announcements() {
           <button onClick={handleAdd}>Add</button>
           <button onClick={closeDialog}>Cancel</button>
         </div>
+      </dialog>
+
+      {/* View/Delete Note Dialog */}
+      <dialog ref={noteDialogRef} className="note-dialog">
+        <h2 className="Announcement">Announcement</h2>
+        {selectedAnnouncement && (
+          <>
+            <p>{selectedAnnouncement.message}</p>
+            <div className="dialog-buttons">
+              <button onClick={handleDelete}>Delete</button>
+              <button onClick={closeNoteDialog}>Close</button>
+            </div>
+          </>
+        )}
       </dialog>
     </div>
   );
