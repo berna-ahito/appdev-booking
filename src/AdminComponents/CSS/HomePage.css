@@ -13,7 +13,7 @@
   font-family: 'Poppins', sans-serif;
   background-color: #fff9f0;
   border: 2.5px solid #89343B;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .admin-info h2 {
@@ -25,6 +25,7 @@
   color: #89343B;
   margin-top: 4px;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .dashboard-stats {
@@ -56,11 +57,13 @@
 .stat-card.maroon {
   background-color: #89343B;
   color: #F8C400;
+  margin-left: 20px;
 }
 
 .stat-card.yellow {
   background-color: #FFE98A;
   color: #89343B;
+  margin-left: 20px;
 }
 
 .divider {
@@ -76,6 +79,7 @@
   border-radius: 10px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   width: 60%;
+  margin-left: 20px;
 }
 
 .announcements-card h3 {

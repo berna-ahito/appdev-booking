@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderTutee from './HeaderTutee';
-import SidebarTutee from './SidebarTutee';
 import './CSS/HomeTutee.css'; // Adjust the path if needed
 
 function HomeTutee() {

@@ -9,7 +9,7 @@
 
 .sidebar {
   background-color: #F8C400;
-  width: 60px; 
+  width: 70px; 
   height: 100vh;
   transition: width 0.3s ease-in-out;
   overflow: hidden;
@@ -30,7 +30,7 @@
 .toggle-btn {
   position: absolute;
   top: 20px;
-  left: 10px;
+  left: 20px;
   cursor: pointer;
   font-size: 24px;
   color: maroon;
@@ -79,7 +79,7 @@
 .sidebar.open .logout-btn {
   opacity: 1;
 }
-/* Overlay for the dialog */
+
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -90,7 +90,6 @@
   z-index: 1050;
 }
 
-/* Dialog box container */
 .logout-dialog {
   position: fixed;
   top: 50%;
@@ -108,14 +107,12 @@
   color: maroon;
 }
 
-/* Dialog heading */
 .logout-dialog h3 {
   margin-bottom: 10px;
   font-size: 20px;
   color: maroon;
 }
 
-/* Dialog buttons */
 .dialog-buttons {
   display: flex;
   justify-content: space-around;

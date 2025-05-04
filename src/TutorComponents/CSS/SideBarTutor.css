@@ -9,7 +9,7 @@
 
 .sidebar {
   background-color: #F8C400;
-  width: 60px; 
+  width: 70px; 
   height: 100vh;
   transition: width 0.3s ease-in-out;
   overflow: hidden;
@@ -30,7 +30,7 @@
 .toggle-btn {
   position: absolute;
   top: 20px;
-  left: 10px;
+  left: 20px;
   cursor: pointer;
   font-size: 24px;
   color: maroon;
