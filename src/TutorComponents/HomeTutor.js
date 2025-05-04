@@ -42,7 +42,6 @@ function HomeTutor() {
   return (
     <div>
       <HeaderTutor />
-      <SideBarTutor />
 
       <div className="tutor-homepage-container">
         <div className="tutor-homepage-content">
