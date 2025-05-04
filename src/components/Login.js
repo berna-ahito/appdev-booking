@@ -42,7 +42,12 @@ function Login({ setIsLoggedIn }) {
           setError("Unknown role or role not assigned.");
           return;
       }
-  
+
+      console.log("Role:", role);
+      console.log("Sending to:", `http://localhost:8080/${endpoint}`);
+      console.log("Request Body:", requestBody);
+
+
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
