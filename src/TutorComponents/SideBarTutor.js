@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./CSS/SideBarTutor.css";
+import './CSS/SideBarTutor.css';
 
 function SideBarTutor() {
   const [isOpen, setIsOpen] = useState(false);

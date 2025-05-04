@@ -63,11 +63,16 @@ function Login({ setIsLoggedIn }) {
   
       const responseData = await loginRes.json();
       console.log("Server response (JSON):", responseData);
-  
-      if (responseData.tutor_id) {
-        localStorage.setItem("tutor_id", responseData.tutor_id);
-        localStorage.setItem("student_id", responseData.student_id);  // Needed for profile management
+
+      if (role === "tutee") {
+          localStorage.setItem("student_id", responseData.student_id);
+      } else if (role === "tutor") {
+          localStorage.setItem("tutor_id", responseData.tutor_id);
+          localStorage.setItem("student_id", responseData.student_id);  // For profile mgmt
+      } else if (role === "admin") {
+          localStorage.setItem("admin_id", responseData.admin_id);
       }
+
   
       // Handle other roles as well...
   
