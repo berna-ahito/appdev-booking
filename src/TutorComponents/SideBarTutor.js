@@ -4,6 +4,8 @@ import './CSS/SideBarTutor.css';
 
 function SideBarTutor() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false); // Added state for logout dialog
+  const navigate = useNavigate(); // Using useNavigate hook for navigation
 
   const toggleSidebar = () => {
     setIsOpen(prev => !prev);
@@ -11,7 +13,7 @@ function SideBarTutor() {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-    navigate("/");
+    navigate("/"); // Navigate to home page after logout
   };
 
   return (
@@ -28,7 +30,7 @@ function SideBarTutor() {
         <Link to="/tutor/about-us" className="sidebar-link">About Us</Link>
         <Link to="/tutor/contact" className="sidebar-link">Contact</Link>
         <Link to="/tutor/settings" className="sidebar-link">Settings</Link>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <button onClick={() => setShowLogoutDialog(true)} className="logout-btn">Logout</button>
       </div>
       
       {/* Logout confirmation dialog */}
