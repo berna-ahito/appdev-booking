@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import HeaderAdmin from "./HeaderAdmin";
-
 import "./CSS/UserManagement.css";
 
 function UserManagement() {
   const [activeList, setActiveList] = useState("tutees");
+  const [students, setStudents] = useState([]);
 
-  const tutees = [
-    { name: "Tutee One", course: "BSIT", phone: "09123456789", email: "tutee1@email.com", status: "Active" },
-  ];
+  useEffect(() => {
+    fetch("http://localhost:8080/student/all")
+      .then((res) => res.json())
+      .then((data) => {
+        setStudents(data);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch students:", err);
+      });
+  }, []);
 
-  const tutors = [
-    { name: "Tutor One", course: "BSCS", phone: "09987654321", email: "tutor1@email.com", status: "Inactive" },
-  ];
-
+  const tutees = students.filter((s) => s.role === "Tutee");
+  const tutors = students.filter((s) => s.role === "Tutor");
   const users = activeList === "tutees" ? tutees : tutors;
 
   return (
@@ -22,7 +27,6 @@ function UserManagement() {
       <Sidebar />
       <HeaderAdmin />
       <div className="user-management-content">
-
         <div className="header-box">
           <h1>User Management</h1>
         </div>
@@ -43,16 +47,16 @@ function UserManagement() {
             </button>
           </div>
 
-          <div className="search-sort">
+          {/* <div className="search-sort">
             <select className="sort-select">
               <option>Sort by: Newest</option>
               <option>Sort by: Oldest</option>
             </select>
             <input type="text" placeholder="Search" className="search-input" />
-          </div>
+          </div> */}
         </div>
 
-        <div className="table-container">
+        <div className="student-table-container">
           <table className="user-table">
             <thead>
               <tr>
@@ -72,13 +76,15 @@ function UserManagement() {
               ) : (
                 users.map((user, idx) => (
                   <tr key={idx}>
-                    <td>{user.name}</td>
+                    <td>{`${user.first_name} ${user.middle_name || ""} ${user.last_name}`}</td>
                     <td>{user.course}</td>
-                    <td>{user.phone}</td>
+                    <td>{user.contact_number}</td>
                     <td>{user.email}</td>
                     <td className="view-more">View More</td>
                     <td>
-                      <span className={`status ${user.status.toLowerCase()}`}>{user.status}</span>
+                      <span className={`status ${user.status?.toLowerCase() || "active"}`}>
+                        {user.status || "Active"}
+                      </span>
                     </td>
                   </tr>
                 ))
@@ -88,7 +94,7 @@ function UserManagement() {
         </div>
 
         <div className="pagination">
-          {[1, 2, 3, 4, 5].map((num) => (
+          {[1, 2].map((num) => (
             <button key={num} className={`page-button ${num === 1 ? "active" : ""}`}>
               {num}
             </button>
