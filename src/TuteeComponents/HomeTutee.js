@@ -36,7 +36,6 @@ function HomeTutee() {
   return (
     <div className="home-tutee-container">
       <HeaderTutee />
-      <SidebarTutee />
 
       <div className="welcome-container">
         <h1>Welcome back, Student!</h1>
