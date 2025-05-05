@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import HeaderTutee from './HeaderTutee';
-import SidebarTutee from './SidebarTutee';
 import './CSS/BookingPage.css';
 
 function BookingPage() {
