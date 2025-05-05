@@ -42,7 +42,12 @@ function Login({ setIsLoggedIn }) {
           setError("Unknown role or role not assigned.");
           return;
       }
-  
+
+      console.log("Role:", role);
+      console.log("Sending to:", `http://localhost:8080/${endpoint}`);
+      console.log("Request Body:", requestBody);
+
+
       const loginRes = await fetch(`http://localhost:8080/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -58,13 +63,17 @@ function Login({ setIsLoggedIn }) {
   
       const responseData = await loginRes.json();
       console.log("Server response (JSON):", responseData);
-  
-      if (responseData.tutor_id) {
-        localStorage.setItem("tutor_id", responseData.tutor_id);
-        localStorage.setItem("student_id", responseData.student_id);  // Needed for profile management
+
+      if (role === "tutee") {
+          localStorage.setItem("student_id", responseData.student_id);
+      } else if (role === "tutor") {
+          localStorage.setItem("tutor_id", responseData.tutor_id);
+          localStorage.setItem("name", responseData.name);
+          localStorage.setItem("student_id", responseData.student_id); 
+      } else if (role === "admin") {
+          localStorage.setItem("admin_id", responseData.admin_id);
+          localStorage.setItem("name", responseData.name);
       }
-  
-      // Handle other roles as well...
   
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", true);

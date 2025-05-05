@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CSS/ContactSection.css"; 
+import "./CSS/ContactSection.css";
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -39,6 +39,7 @@ function ContactSection() {
 
   return (
     <div className="contact-section">
+      <img className="background-image" src="../../images/bgLanding.jpg" alt="Background" />
       <div className="contact-container">
         <h2 className="contact-title">Contact Us</h2>
         <p className="contact-description">
@@ -81,7 +82,6 @@ function ContactSection() {
           </button>
         </form>
 
-        {/* Success/Error message */}
         {status && <p className="status-message">{status}</p>}
 
         <div className="contact-info">
