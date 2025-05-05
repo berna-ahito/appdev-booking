@@ -26,7 +26,6 @@ function FindTutor() {
   return (
     <div className="home-tutee-container">
       <HeaderTutee />
-      <SidebarTutee />
 
       <div className="find-tutor-container">
         <h1>Find a Tutor</h1>
