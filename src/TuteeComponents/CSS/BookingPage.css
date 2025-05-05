@@ -1,0 +1,71 @@
+.booking-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .booking-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh; /* full viewport height */
+  }
+  
+  
+  .booking-form-box {
+    background: white;
+    border: 2px solid #8b0000;
+    padding: 30px;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    text-align: left;
+  }
+
+  .booking-heading h2 {
+    font-size: 26px;
+    color: maroon;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .booking-form-box label {
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .booking-form-box input {
+    width: 95%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  
+  .confirm-book-button {
+    margin-left: 20px;
+    white-space: nowrap;
+    background-color: #8b0000;
+    color: yellow;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 45px;
+    width: 200px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }

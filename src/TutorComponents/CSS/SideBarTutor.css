@@ -1,81 +1,83 @@
 .sidebar-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-    z-index: 1000;
-  }
-  
-  .sidebar {
-    background-color: #F8C400;
-    width: 60px; 
-    height: 100vh;
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    position: relative;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sidebar.open {
-    width: 200px;  
-    align-items: flex-start;
-    padding-left: 10px;
-  }
-  
-  .toggle-btn {
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: maroon;
-    background: none;
-    border: none;
-    z-index: 1100;
-  }
-  
-  .sidebar-link {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: maroon;
-    color: #F8C400;
-    text-align: center;
-    border-radius: 16px;
-    text-decoration: none;
-    font-weight: bold;
-    width: 80%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .sidebar.open .sidebar-link {
-    opacity: 1;
-  }
-  
-  .sidebar-link:hover {
-    background-color: #8b0000;
-  }
-  
-  .logout-btn {
-    margin-left: 10px;
-    background-color: maroon;
-    color: #F8C400;
-    padding: 10px;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    width: 80%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .sidebar.open .logout-btn {
-    opacity: 1;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  z-index: 1000;
+}
+
+.sidebar {
+  background-color: #F8C400;
+  width: 70px; 
+  height: 100vh;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+  width: 200px;  
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: maroon;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.sidebar-link {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: maroon;
+  color: #F8C400;
+  text-align: center;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 80%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .sidebar-link {
+  opacity: 1;
+}
+
+.sidebar-link:hover {
+  background-color: #8b0000;
+}
+
+.logout-btn {
+  margin-top: 65px;
+  padding: 10px;
+  background-color: maroon;
+  color: #F8C400;
+  text-align: center;
+  border-radius: 16px;
+  font-weight: bold;
+  width: 80%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.open .logout-btn {
+  opacity: 1;
+}
+
+.logout-btn:hover {
+  background-color: #8b0000;
+}

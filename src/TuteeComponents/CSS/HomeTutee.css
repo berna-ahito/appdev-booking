@@ -1,73 +1,137 @@
 .home-tutee-container {
-    position: relative;
-  }
-  
-  .welcome-container {
-    margin: 50px 50px 20px 120px; /* adjust for sidebar space */
-    padding: 35px;
-    background: linear-gradient(90deg, #F8C400 0%, #812c33 100%);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: white;
-  }
-  
-  .welcome-container h1 {
-    margin: 0;
-    font-size: 3rem;
-  }
-  
-  .welcome-container p {
-    margin-top: 5px;
-    font-size: 1.2rem;
-    font-style: italic;
-  }
+  position: relative;
+}
 
-  .tutoring-schedule-container {
-    margin: 40px 50px 20px 120px;
-  }
+.welcome-container {
+  margin: 50px 50px 20px 120px; /* adjust for sidebar space */
+  padding: 35px;
+  background: linear-gradient(90deg, #F8C400 0%, #812c33 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+}
 
-  h2 {
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    display: inline-block;
+.welcome-container h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.welcome-container p {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.home-tutoring-schedule-container {
+  margin: 5px 50px 20px 120px;
+}
+
+h2 {
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  display: inline-block;
 } 
-  .tutor-card {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #8b0000;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-  }
-  
-  .tutor-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #8b0000;
-  }
-  
-  .tutor-subject {
-    font-size: 1rem;
-    color: gray;
-    margin-bottom: 20px;
-  }
-  
-  .view-button {
-    background-color: #8b0000;
-    color: yellow;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .view-button:hover {
-    background-color: #a83232;
-  }
-  
+.tutor-card {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #8b0000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.tutor-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #8b0000;
+}
+
+.tutor-subject {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.view-button {
+  background-color: #8b0000;
+  color: yellow;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.view-button:hover {
+  background-color: #a83232;
+}
+
+.tutee-announcement-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 100px;
+  bottom: -4cm;
+  width: 250px;
+  height: 250px; /* fixed height */
+  overflow-y: auto; 
+  background-color: #FAE8A7;
+  border-radius: 10px;
+  border: 2px solid #812c33bb;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tutee-announcement-container::-webkit-scrollbar {
+  width: 6px; /* thinner scrollbar */
+  margin-right: 10px;
+}
+
+.tutee-announcement-container::-webkit-scrollbar-track {
+  background: transparent; /* hides track background */
+}
+
+.tutee-announcement-container::-webkit-scrollbar-thumb {
+  background-color: rgba(129, 44, 51, 0.3); /* subtle thumb color */
+}
+
+.tutee-announcement-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(129, 44, 51, 0.5); /* slightly more visible on hover */
+}
+
+.announcement-container h3 {
+  margin-top: 0;
+  font-size: 26 px;
+  color: maroon;
+  display: block; /* ensures it takes up full width */
+}
+
+.announcement-message {
+  display: block; /* this forces it to break below the header */
+  color: #000;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.announcement-item {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d3c785;
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+}

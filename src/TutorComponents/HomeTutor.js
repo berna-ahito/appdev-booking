@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import HeaderTutor from "./HeaderTutor";
-import SideBarTutor from "./SideBarTutor";
 import "./CSS/HomeTutor.css";
 
 
