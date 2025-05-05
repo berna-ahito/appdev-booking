@@ -29,6 +29,7 @@
   .view-button.active {
     background-color: #F8C400;
     color: maroon;
+    border: 2px solid maroon;
   }
 
   .view-button:hover {
@@ -80,9 +81,9 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
   
-  .table-container {
+  .student-table-container {
     width: 91%;
-    margin-left: 60px;
+    margin-left: 50px;
     margin-top: 20px;
     background-color: #f9f9f9;
     padding: 20px;
@@ -134,6 +135,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 25px;
   }
   
   .page-button {

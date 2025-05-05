@@ -24,6 +24,7 @@ import MyBookings from "./TuteeComponents/MyBookings";
 import MessagesTutee from "./TuteeComponents/MessagesTutee";
 import ProfileTutee from "./TuteeComponents/ProfileTutee";
 import SidebarTutee from "./TuteeComponents/SidebarTutee";
+import BookingPage from "./TuteeComponents/BookingPage";
 
 // Tutor Components
 import HomeTutor from "./TutorComponents/HomeTutor";
@@ -32,6 +33,8 @@ import ProfileTutor from "./TutorComponents/ProfileTutor";
 import ManageSession from "./TutorComponents/ManageSession";
 import SidebarTutor from "./TutorComponents/SideBarTutor";
 import SettingsTutor from "./TutorComponents/SettingsTutor";
+import FindTutor from "./TuteeComponents/FindTutor";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -85,6 +88,11 @@ function App() {
         <Route path="/tutee/profile" element={isLoggedIn ? <ProfileTutee /> : <Navigate to="/login" />} />
         <Route path="/tutee/About-Us" element={isLoggedIn ? <AboutSection /> : <Navigate to="/login" />} />
         <Route path="/tutee/Contact" element={isLoggedIn ? <ContactSection /> : <Navigate to="/login" />} />
+        <Route path="/tutee/find-tutor" element={isLoggedIn ? <FindTutor /> : <Navigate to="/login" />} />
+        <Route path="/tutee/booking" element={isLoggedIn ? <BookingPage /> : <Navigate to="/login" />} />
+        <Route path="/tutee/book-tutor/:tutorId" element={<BookingPage />} />
+
+
 
         {/* Tutor Routes */}
         <Route path="/tutor/home" element={isLoggedIn ? <HomeTutor /> : <Navigate to="/login" />} />

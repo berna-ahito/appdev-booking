@@ -23,7 +23,7 @@ function SidebarTutee() {
         </div>
 
         <Link to="/tutee/home" className="sidebar-link">Home</Link>
-        <Link to="/tutee/find-a-tutor" className="sidebar-link">Find a Tutor</Link>
+        <Link to="/tutee/find-tutor" className="sidebar-link">Find a Tutor</Link>
         <Link to="/tutee/my-bookings" className="sidebar-link">My Bookings</Link>
         <Link to="/tutee/message" className="sidebar-link">Messages</Link>
         <Link to="/tutee/profile" className="sidebar-link">Profile</Link>
