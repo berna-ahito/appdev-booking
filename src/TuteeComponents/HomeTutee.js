@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderTutee from './HeaderTutee';
-import SidebarTutee from './SidebarTutee';
 import './CSS/HomeTutee.css'; // Adjust the path if needed
 
 function HomeTutee() {
@@ -23,7 +22,6 @@ function HomeTutee() {
   return (
     <div className="home-tutee-container">
       <HeaderTutee />
-      <SidebarTutee />
 
       {/* Welcome Container */}
       <div className="welcome-container">

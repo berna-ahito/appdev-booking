@@ -166,6 +166,7 @@ function ProfileStudent() {
     }
   };
 
+
   return (
     <div>
       <HeaderTutee />
@@ -230,6 +231,36 @@ function ProfileStudent() {
           <button className="edit-button" onClick={isEditingPersonal ? handlePersonalInfo : () => setIsEditingPersonal(!isEditingPersonal)}>
             {isEditingPersonal ? "Save" : "Edit"}
           </button>
+=======
+    <div className="main-layout">
+    <div className="content-area">
+    
+    <div className="profile-container">
+      <div className="sidebar"></div>
+      <div className="main-content">
+        <header className="header">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+          <h1>WILDTEACH</h1>
+          <div className="header-right">
+            <i className="fa-solid fa-bell bell-icon"></i>
+            <button className="tutor-btn">Find a Tutor</button>
+          </div>
+        </header>
+        
+
+        <h2 className="section-title">Profile</h2>
+
+        <div className="card-profile">
+          <div className="profile-summary">
+            <div className="avatar">
+            <i class="fa-solid fa-user"></i>
+            </div>
+            <div className="info">
+              <p input="name">John Doe</p>
+              <p input="email">johndoe@cit.edu</p>
+            </div>
+            <button className="edit-btn">Edit</button>
+          </div>
         </div>
 
         <div className="info-grid">

@@ -63,8 +63,9 @@
     background-color: #8b0000;
   }
   
-  .logout-btn {
-    margin-top: 140px;
+  .logout-btnTutee {
+    margin-top: 50px;
+    margin-bottom: 20px;
     margin-left: 10px;
     background-color: maroon;
     color: #F8C400;
@@ -72,13 +73,13 @@
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    margin-bottom: 20px;
     width: 80%;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
   
-  .sidebar.open .logout-btn {
+  .sidebar.open .logout-btnTutee {
     opacity: 1;
   }
+  
   
