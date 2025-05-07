@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import HeaderTutee from './HeaderTutee';
 import './CSS/HomeTutee.css';
 
-
 function HomeTutee() {
   const [tutorBookings, setTutorBookings] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
@@ -60,7 +59,7 @@ function HomeTutee() {
   }, []);
 
   const handleViewClick = () => {
-    navigate('/mybookings');
+    navigate('/tutee/my-bookings');
   };
 
   return (
