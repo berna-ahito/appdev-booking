@@ -25,6 +25,7 @@ import MessagesTutee from "./TuteeComponents/MessagesTutee";
 import ProfileTutee from "./TuteeComponents/ProfileTutee";
 import SidebarTutee from "./TuteeComponents/SidebarTutee";
 import BookingPage from "./TuteeComponents/BookingPage";
+import SettingsTutee from "./TuteeComponents/SettingsTutee";
 
 // Tutor Components
 import HomeTutor from "./TutorComponents/HomeTutor";
@@ -91,6 +92,7 @@ function App() {
         <Route path="/tutee/find-tutor" element={isLoggedIn ? <FindTutor /> : <Navigate to="/login" />} />
         <Route path="/tutee/booking" element={isLoggedIn ? <BookingPage /> : <Navigate to="/login" />} />
         <Route path="/tutee/book-tutor/:tutorId" element={<BookingPage />} />
+        <Route path="/tutee/settings" element={isLoggedIn ? <SettingsTutee /> : <Navigate to="/login" />} />
 
 
 
