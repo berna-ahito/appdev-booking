@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import HeaderAdmin from "./HeaderAdmin";
 import "./CSS/UserManagement.css";
-import { useNavigate } from "react-router-dom"; // ✅ Added
 
 function UserManagement() {
   const [activeList, setActiveList] = useState("tutees");
   const [students, setStudents] = useState([]);
-  const navigate = useNavigate(); // ✅ Added
 
   // Utility: Get status overrides from localStorage
   const getStatusOverrides = () => {
@@ -47,6 +45,7 @@ function UserManagement() {
     setStudents(updatedStudents);
     saveStatusOverride(id, newStatus);
 
+    // Show alert message
     const changedUser = students.find((s) => s.student_id === id);
     const fullName = `${changedUser.first_name} ${changedUser.middle_name || ""} ${changedUser.last_name}`;
     alert(`Status of ${fullName.trim()} has been changed to ${newStatus}.`);
@@ -106,20 +105,7 @@ function UserManagement() {
                     <td>{user.course}</td>
                     <td>{user.contact_number}</td>
                     <td>{user.email}</td>
-                    <td className="view-more">
-                      <button
-                        className="view-button"
-                        onClick={() => {
-                          if (user.role === "Tutee") {
-                            navigate("/tutee/profile");
-                          } else if (user.role === "Tutor") {
-                            navigate("/tutor/profile");
-                          }
-                        }}
-                      >
-                        View
-                      </button>
-                    </td>
+                    <td className="view-more">View More</td>
                     <td>
                       <select
                         className={`status-dropdown ${user.status?.toLowerCase() || "active"}`}
