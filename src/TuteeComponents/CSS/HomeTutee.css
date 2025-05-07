@@ -23,7 +23,8 @@
 }
 
 .home-tutoring-schedule-container {
-  margin: 5px 50px 20px 120px;
+  margin-left: 120px;
+  width: 500px;
 }
 
 h2 {
