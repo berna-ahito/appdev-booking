@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import HeaderTutee from './HeaderTutee';
@@ -7,6 +7,8 @@ import './CSS/BookingPage.css';
 
 function BookingPage() {
   const { tutorId } = useParams(); // from URL
+  const navigate = useNavigate(); // Hook for navigation
+
   const [tutor, setTutor] = useState(null);
   const [subject, setSubject] = useState('');
   const [sessionDateTime, setSessionDateTime] = useState(new Date());
@@ -61,6 +63,8 @@ function BookingPage() {
 
         if (res.ok) {
           alert('Booking successful!');
+          navigate('/tutee/home'); // Redirect to HomeTutee after clicking OK
+
         } else {
           alert(`Booking failed: ${res.status} - ${data.message || 'Unknown error'}`);
         }
