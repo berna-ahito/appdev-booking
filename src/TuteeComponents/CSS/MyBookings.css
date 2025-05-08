@@ -1,80 +1,92 @@
 .my-bookings-container {
-    margin-left: 250px; /* to adjust for sidebar */
-    padding: 20px;
-  }
-  
-  .my-bookings-container h1 {
-    color: #7b2d2f;
-    margin-bottom: 20px;
-  }
-  
-  .filter-buttons {
-    margin-bottom: 20px;
-  }
-  
-  .filter-buttons button {
-    background-color: #fce088;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .bookings-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .booking-card {
-    border: 1px solid #d9a9a9;
-    padding: 15px;
-    border-radius: 10px;
-    width: 250px;
-    background-color: #fff;
-    color: #7b2d2f;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .booking-card p {
-    margin: 5px 0;
-  }
-  
-  .pagination {
-    margin-top: 30px;
-    text-align: center;
-  }
-  
-  .page-button {
-    background-color: #7b2d2f;
-    color: white;
-    border: none;
-    margin: 0 5px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .page-button.active {
-    background-color: #d9a9a9;
-    color: #7b2d2f;
-  }
-  
-  .tutoring-wrapper {
-    display: flex;
-    align-items: center;     /* Vertical center */
-    height: 10vh;            /* Adjust as needed */
-    margin-left: 120px;      /* Keep horizontal offset */
-  }
+  max-width: 1200px;
+  margin: 80px auto;         /* Center horizontally */
+  padding: 20px;
+  background-color: #7b2d2f;
+  border-radius: 30px;
+  border: 3px solid #fce088
+}
 
-  .filter-buttons select {
-    background: #f0f0f0;
-    margin: 10px;
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  
+.my-bookings-container h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  background-color: #fce088;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bookings-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.booking-card {
+  border: 1px solid #d9a9a9;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  background-color: #fff;
+  color: #7b2d2f;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.booking-card p {
+  margin: 5px 0;
+}
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.page-button {
+  background-color: #7b2d2f;
+  color: white;
+  border: none;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page-button.active {
+  background-color: #d9a9a9;
+  color: #7b2d2f;
+}
+
+.tutoring-wrapper {
+  display: flex;
+  align-items: center;     /* Vertical center */
+  height: 10vh;            /* Adjust as needed */
+  margin-left: 120px;      /* Keep horizontal offset */
+}
+
+.filter-buttons select {
+  background: #fce088;
+  margin: 15px;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #7b2d2f;
+  width: 180px; /* Adjust this value as needed */
+}
