@@ -1,50 +1,50 @@
 .student-header {
-    background-color: #ffffff;
-    color: #89343B;
-    margin-left: 40px; 
-    font-size: 20px;
-    min-height: 40px;
-    font-family: 'Poppins', sans-serif;
-    padding: 20px 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid #89343B;
-  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    font-weight: bold;
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .bell-icon {
-    width: 45px;
-    height: 45px;
-    margin-right: 0px;
-    cursor: pointer;
-  }
-  
-  .find-tutor-button {
-    background-color: #89343B;
-    height: 45px;
-    color: #FFD700;
-    border: none;
-    margin-right: 30px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .find-tutor-button:hover {
-    background-color: #6c1522;
-  }
-  
+  background-color: #ffffff;
+  color: #89343B;
+  margin-left: 40px; 
+  font-size: 20px;
+  min-height: 40px;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #89343B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  margin-left: 30px; 
+
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bell-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 0px;
+  cursor: pointer;
+}
+
+.find-tutor-button {
+  background-color: #89343B;
+  height: 45px;
+  color: #FFD700;
+  border: none;
+  margin-right: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.find-tutor-button:hover {
+  background-color: #6c1522;
+}
