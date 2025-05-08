@@ -71,8 +71,14 @@ function HomeTutee() {
         <p>Work smart, not harder</p>
       </div>
 
-      <div className="home-tutoring-schedule-container">
-        <h2>Upcoming Tutoring Schedule</h2>
+      <div className="tutoring-title">
+      <h2>Upcoming Tutoring Schedule</h2>
+
+      </div>
+  
+
+    <div className="home-tutoring-schedule-container">
+      <div className="tutoring-cards-wrapper">
         {tutorBookings.length > 0 ? (
           tutorBookings.map((booking) => (
             <div key={booking.booking_id} className="tutor-card">
@@ -96,7 +102,6 @@ function HomeTutee() {
         )}
       </div>
 
-      {/* Announcement Container */}
       <div className="tutee-announcement-container">
         <h3>Announcements</h3>
         <div className="announcement-list">
@@ -114,6 +119,7 @@ function HomeTutee() {
           )}
         </div>
       </div>
+    </div>`
     </div>
   );
 }
